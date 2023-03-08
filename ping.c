@@ -61,8 +61,9 @@ int main(int argc, char **argv) {
 
 	// Extract the IP address.
 	char *extractedIpAddress = inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr);
-	char *ipAddress = malloc(strlen(extractedIpAddress));
+	char *ipAddress = malloc(strlen(extractedIpAddress) + 1);
 	memcpy(ipAddress, extractedIpAddress, strlen(extractedIpAddress));
+    ipAddress[strlen(extractedIpAddress)] = '\0';
 
 	printf("Interface: %s\nIP Address: %s\n", interface, ipAddress);
 

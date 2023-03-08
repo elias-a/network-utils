@@ -6,7 +6,7 @@ objects=ping
 all: $(objects)
 
 $(objects): %: %.c
-	$(CC) $(CFLAGS) -o $@.o $<
+	$(CC) -o $@.o $< $(CFLAGS)
 
 clean:
 	rm $(objects).o
