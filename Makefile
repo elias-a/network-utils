@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-lpcap
 
-objects=ping
+objects=ping arp
 
 all: $(objects)
 
